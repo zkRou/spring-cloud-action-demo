@@ -1,0 +1,27 @@
+spring:
+  profiles: node1
+  application:
+    name: eureka-server
+server:
+  port: 1001
+eureka:
+  instance:
+    hostname: node1
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1002/eureka/
+
+---
+
+spring:
+  profiles: node2
+  application:
+    name: eureka-server
+server:
+  port: 1002
+eureka:
+  instance:
+    hostname: node2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
